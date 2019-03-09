@@ -9,24 +9,26 @@ a {
   text-decoration: none;
 }
 
+.main {
+  text-align: center;
+}
+
 .logo {
   max-width: 99%;
   max-height: 99%;
 }
 
 .description {
-  margin-left: 25%;
-  margin-right: 25%;
-  color: #d1dce6;
-
+  max-width: 30rem;
+  margin: auto;
+  padding: 1rem;
+  color: #d1dce6; 
 }
 
 .button {
   border: none;
   color: white;
-  padding: 16px 32px;
-  height: 68px;
-  width: 235px;
+  padding: 16px 32px; 
   text-align: center;
   text-decoration: none;
   display: inline-block;
