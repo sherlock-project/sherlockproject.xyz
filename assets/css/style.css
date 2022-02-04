@@ -1,17 +1,49 @@
+/*mouse scrollbar settings */
+body::-webkit-scrollbar {
+  width: 15px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #1a2b34;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(180deg, #708AD4 0%, rgb(208, 54, 82) 60%, #b092d1 100%);
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  border-radius: 100px;
+  border: 3px solid #1a2b34;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(58, 68, 88);
+}
+
+
+
 * { font-family: "Comfortaa", cursive; }
 
 body {
   background-color: #1a2b34;
 }
 
+i {
+  color: #a6aaae; 
+  font-size: 12px;
+}
+
 a {
-  color: #6699cc;
+  color: rgb(78, 78, 206);
+  transition: color 0.7s;
   text-decoration: none;
+}
+
+a:hover {
+  color: rgb(142, 142, 240);
 }
 
 .main {
   text-align: center;
-  margin-bottom: 4em; /* Leave space for footer */
+  margin-bottom: 10px; /* Leave space for footer */
 }
 
 .logo {
@@ -27,7 +59,7 @@ a {
 }
 
 .button {
-  border: none;
+  border: solid;
   color: white;
   padding: 16px 32px; 
   text-align: center;
@@ -41,46 +73,44 @@ a {
   border-radius: 8px;
   max-width: 99%;
   max-height: 99%;
+  transition: background-color 1.5s;
 }
 
 .installation {
   background-color: #6699cc;
   color: #d1dce6;
-  border: 2px solid #6699cc;
+  border: 3px solid #6699cc;
 }
 
 .installation:hover {
   background-color: #1a2b34; /* Same as page background color */
   color: #d1dce6;
-  border: 2px solid #6699cc;
 }
 
 .development {
   background-color: #ec5f67;
   color: #d1dce6;
-  border: 2px solid #ec5f67;
+  border: 3px solid #ec5f67;
 }
 
 .development:hover {
   background-color: #1a2b34; /* Same as page background color */
   color: #d1dce6;
-  border: 2px solid #ec5f67;
 }
 
+
 .about {
-  background-color: #99c794;
+  background-color: #b092d1;
   color: #d1dce6;
-  border: 2px solid #99c794;
+  border: 3px solid #b092d1;
 }
 
 .about:hover {
   background-color: #1a2b34; /* Same as page background color */
   color: #d1dce6;
-  border: 2px solid #99c794;
 }
 
 .footer {
-   position: fixed;
    left: 0;
    bottom: 0;
    width: 100%;
@@ -91,5 +121,5 @@ a {
 }
 
 .heart {
-  vertical-align:middle
+  vertical-align: middle;
 }
