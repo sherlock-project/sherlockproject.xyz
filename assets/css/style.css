@@ -120,15 +120,18 @@ a {
 /* Footer */
 
 .footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   color: var(--white);
-   text-align: center;
-   background-color: var(--black); /* Same as page background color */
-   opacity: 0.9;
-   padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  color: var(--white);
+  background-color: var(--black); /* Same as page background color */
+  opacity: 0.9;
+  padding: 1rem 0;
+  text-align: center;
 }
 
 .heart {
