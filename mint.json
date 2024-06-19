@@ -1,0 +1,39 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Sherlock",
+  "logo": {
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#9563FF",
+    "light": "#6366f1",
+    "dark": "#0D001D",
+    "anchors": {
+      "from": "#0D9373",
+      "to": "#07C983"
+    } 
+  },
+  "topbarCtaButton": {
+    "type": "github",
+    "url": "https://github.com/sherlock-project/sherlock"
+  },
+  "navigation": [
+    {
+      "group": "Get started",
+      "pages": [
+        "welcome",
+        "installation",
+        "usage"
+      ]
+    },
+    {
+      "group": "Contributing",
+      "pages": [
+        "contribute",
+        "adding-sites"
+      ]
+    }
+  ]
+}
