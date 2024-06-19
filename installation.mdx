@@ -1,0 +1,93 @@
+---
+title: Installation
+mode: "wide"
+---
+
+<Tabs>
+  <Tab title="PyPi">
+    ```bash
+    pipx install sherlock-project
+    ```
+
+    <Note>`pip` may be used in place of `pipx`</Note>
+    
+  </Tab>
+  <Tab title="Brew">
+    ```bash
+    brew install sherlock
+    ```
+
+    <Note>Community supported</Note>
+  </Tab>
+  <Tab title="Docker">
+    ```bash
+    docker pull sherlock/sherlock
+    ```
+<Note>Sherlock doesn't yet have context detection. It's recommended that Docker containers be ran with option `-o /opt/sherlock/results/{user123}.txt` (replace `{user123}`) when an output file is desired at the mounted volume (as seen in the compose). This has no effect on stdout, which functions as expected out of the box.</Note>
+
+```bash
+# One-off searches
+docker run --rm -t sherlock/sherlock user123
+
+# If you need to save the output file... (modify as needed)
+# Output file will land in ${pwd}/results
+docker run --rm -t -v "$PWD/results:/opt/sherlock/results" sherlock/sherlock -o /opt/sherlock/results/text.txt user123
+```
+
+```bash
+# At any time, you may update the image via this command
+docker pull sherlock/sherlock
+```
+
+### Using compose
+
+```yml
+version: "3"
+services:
+  sherlock:
+    container_name: sherlock
+    image: sherlock/sherlock
+    volumes:
+      - ./sherlock/:/opt/sherlock/results/
+```
+
+```bash
+docker compose run sherlock user123
+```
+
+### Build image from source (useful for contributors)
+
+```bash
+# Assumes ${pwd} is repository root
+docker build -t sherlock .
+docker run --rm -t sherlock user123
+```
+  </Tab>
+  <Tab title="GitHub">
+    ```bash
+    git clone https://github.com/sherlock-project/sherlock.git
+    cd sherlock
+    virtualenv .
+    source bin/activate
+    ```
+
+    ## Build live package from source (useful for contributors)
+
+    Building an editable (or live) package links the entry point to your current directory, rather than to the standard install location. This is often useful when working with the code base, as changes are reflected immediately without reinstallation.
+
+    Note that the version number will be 0.0.0 for pipx local builds unless manually changed in the pyproject file (it will prompt the user for an update).
+
+    ```bash
+    pipx install -e .
+    ```
+
+    ## Run package from source (without installing)
+
+    If you'd rather not install directly to your system, you can import the module at runtime with -m.
+
+    ```bash
+    python3 -m sherlock user123 user789
+    ```
+
+  </Tab>
+</Tabs>
