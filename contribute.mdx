@@ -1,36 +1,30 @@
 ---
 title: 'How to contribute'
-description: 'We would love to have you help us with the development of Sherlock. Each and every contribution is greatly valued!'
+description: 'Join over **200+** contributers to improve Sherlock. Each and every contribution is greatly valued!'
 ---
 
-## How to contribute to Sherlock
-
-
-Here are some things we would appreciate your help on:
-1. [Adding targets](#adding-targets)
-1. [Cleaning up existing targets](#removing-targets)
-1. [Restoring previously removed targets](#restoring-targets)
+<a href="https://github.com/sherlock-project/sherlock/graphs/contributors">
+  <img src="https://contrib.rocks/image?&columns=25&max=10000&&repo=sherlock-project/sherlock" noZoom />
+</a>
 
 ## Adding targets
 
-Please look at the Wiki entry on [adding new sites][wiki_new_sites] to understand the issues.
+Please look at the [adding sites](/adding-sites) page to understand the issues.
 
 All new sites that are added to Sherlock need to have an existing (already claimed) username included in their definition. The linked Wiki page describes this in more detail. This inclusion allows us to run unit tests and prevent regression.
 
 Contributors are *required* to test any new sites for both false positives and false negatives. Contributors are *encouraged* to run unit tests as well.
 
-Contributors do not have to run the [site_list.py](/site_list.py) script, as it's ran automagically on master after each manifest change.
-
 ## Removing targets
 
 If there are performance problems with a site (e.g. slow to respond, unreliable uptime, ...), then
-the site may be removed from the list. The [removed_sites.md][file_removed_md] file contains sites that were included at one time in Sherlock, but had to be removed for one reason or another.
+the site may be removed from the list. The [removed-sites.md][file_removed_md] file contains sites that were included at one time in Sherlock, but had to be removed for one reason or another.
 
 If a site has *occasional* performance problems, but is otherwise accurate, it may be preferable to add a test to weed out false positives rather than removing it.
 
 ## Restoring targets
 
-Likely our biggest backlog. If you can propose a functional query that complies with [#Adding targets](#adding-targets) that would shrink our [removed sites list][file_removed_md], that would be greatly appreciated.
+Likely our biggest backlog. If you can propose a functional query that complies with [Adding sites](/adding-sites) that would shrink our [removed sites list][file_removed_md], that would be greatly appreciated.
 
 ## Adding New Functionality
 
@@ -69,5 +63,5 @@ Contributors that add new features are *encouraged* make an attempt at creating 
 
 
 [wiki_new_sites]: https://github.com/sherlock-project/sherlock/wiki/Adding-Sites-To-Sherlock
-[file_removed_md]: /removed_sites.md
+[file_removed_md]: https://github.com/sherlock-project/sherlock/blob/master/docs/removed-sites.md
 [issues_new]: https://github.com/sherlock-project/sherlock/issues/new/choose
