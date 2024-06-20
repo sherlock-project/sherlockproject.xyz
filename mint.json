@@ -23,9 +23,9 @@
     {
       "group": "Get started",
       "pages": [
-        "welcome",
         "installation",
-        "usage"
+        "usage",
+        "sites"
       ]
     },
     {
