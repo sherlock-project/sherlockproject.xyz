@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Sherlock",
+  "name": "Sherlock Project",
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
