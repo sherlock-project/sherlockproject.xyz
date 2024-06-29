@@ -1,10 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
   "name": "Sherlock Project",
-  "logo": {
-    "dark": "/logo/dark.png",
-    "light": "/logo/light.png"
-  },
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#9563FF",
