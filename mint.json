@@ -35,5 +35,12 @@
         "adding-sites"
       ]
     }
-  ]
+  ],
+  "metadata": {
+    "og:title": "Sherlock Project",
+    "og:description": "Hunt down social media accounts by username across 400+ social networks",
+    "og:type": "website",
+    "og:locale": "en",
+    "og:site_name": "Sherlock Project"
+  }
 }
