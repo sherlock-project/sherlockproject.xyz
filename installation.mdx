@@ -6,35 +6,84 @@ mode: "wide"
 ---
 
 <Tabs>
-  <Tab title="PyPi">
+  <Tab title="PyPI (pip)">
+    <Info>
+    This is an officially supported package, maintained by a member of the Sherlock Project itself.
+    </Info>
+
+    [pipx](https://pipx.pypa.io/) is often recommended over pip, having more predictable behavior.
     ```bash
     pipx install sherlock-project
     ```
 
-    <Note>`pip` may be used in place of `pipx`</Note>
+    <Note>    
+    For those who prefer classic pip, it's very similar. Userspace is recommended.
+
+    ```bash
+    pip install --user sherlock-project
+    ```
+    </Note>
     
+    That's it! You can now run sherlock from anywhere.
+
+    ```bash
+    sherlock --version
+    ```
   </Tab>
   <Tab title="Brew">
+    <Info>
+    This package is not officially supported, but it's maintained by a trusted packager.
+    </Info>
     ```bash
     brew install sherlock
     ```
 
-    <Note>Community supported</Note>
+    That's it! You can now run sherlock from anywhere.
+
+    ```bash
+    sherlock --version
+    ```
   </Tab>
 
   <Tab title="Apt">
+    <Info>
+    This package is not officially supported, but it's maintained under the trusted purview of the Debian Security Tools Packaging Team. The ParrotOS image is maintained by the ParrotOS team.
+    
+    We may begin to officially support this package in the future.
+    </Info>
+
+    Supported distributions are __Kali__ and __ParrotOS__. Work is underway to support Debian, Ubuntu, and others.
     ```bash
-    apt install sherlock
+    sudo apt install sherlock
+    ```
+
+    That's it! You can now run sherlock from anywhere.
+
+    ```bash
+    sherlock --version
     ```
   </Tab>
 
   <Tab title="BlackArch">
+    <Info>
+    This package is not officially supported, but still closely follows our release cycle.
+    </Info>
     ```bash
-    pacman -S sherlock
+    sudo pacman -S sherlock
+    ```
+
+    That's it! You can now run sherlock from anywhere.
+
+    ```bash
+    sherlock --version
     ```
   </Tab>
 
   <Tab title="Docker">
+    <Info>
+    This is an officially supported image, maintained by a member of the Sherlock Project itself.
+    </Info>
+
     ```bash
     docker pull sherlock/sherlock
     ```
@@ -79,6 +128,9 @@ docker run --rm -t sherlock user123
 ```
   </Tab>
   <Tab title="GitHub">
+    <Info>
+    While this method uses the official repository, it's not an officially supported installation method. This method is recommended for contributors, packagers, and other users who need access to the source code.
+    </Info>
     ```bash
     git clone https://github.com/sherlock-project/sherlock.git
     cd sherlock
