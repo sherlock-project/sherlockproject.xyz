@@ -1,136 +1,162 @@
+# 📥 Installation - Sherlock Project
+
+> **Find usernames across social networks**
+
 ---
-title: Installation
-icon: download
-mode: "wide"
-'og:title': 'Installation - Sherlock Project'
+
+## 📦 Installation Methods
+
+- [PyPI (pip)](#-pypi-pip) — *Officially Supported*
+- [Homebrew](#-homebrew)
+- [Apt (Kali/ParrotOS)](#-apt-kali--parrotos)
+- [Dnf (Fedora)](#-dnf-fedora) — *Officially Supported*
+- [BlackArch](#-blackarch)
+- [Docker](#-docker) — *Officially Supported*
+- [GitHub (Source)](#-github-source)
+
 ---
 
-<Tabs>
-  <Tab title="PyPI (pip)">
-    <Info>
-    This is an officially supported package, maintained by a member of the Sherlock Project itself.
-    </Info>
+## 🐍 PyPI (pip)
 
-    [pipx](https://pipx.pypa.io/) is often recommended over pip, having more predictable behavior.
-    ```bash
-    pipx install sherlock-project
-    ```
+> ✅ **Officially supported** — maintained by the Sherlock Project team. 
 
-    <Note>    
-    For those who prefer classic pip, it's very similar. Userspace is recommended.
-
-    ```bash
-    pip install --user sherlock-project
-    ```
-    </Note>
-    
-    That's it! You can now run sherlock from anywhere.
-
-    ```bash
-    sherlock --version
-    ```
-  </Tab>
-  <Tab title="Brew">
-    <Info>
-    This package is not officially supported, but it's maintained by a trusted packager.
-    </Info>
-    ```bash
-    brew install sherlock
-    ```
-
-    That's it! You can now run sherlock from anywhere.
-
-    ```bash
-    sherlock --version
-    ```
-  </Tab>
-
-  <Tab title="Apt">
-    <Info>
-    This package is not officially supported, but it's maintained under the trusted purview of the Debian Security Tools Packaging Team. The ParrotOS image is maintained by the ParrotOS team.
-    
-    We may begin to officially support this package in the future.
-    </Info>
-
-    Supported distributions are __Kali__ and __ParrotOS__. Work is underway to support Debian, Ubuntu, and others.
-    ```bash
-    sudo apt install sherlock
-    ```
-
-    That's it! You can now run sherlock from anywhere.
-
-    ```bash
-    sherlock --version
-    ```
-  </Tab>
-
-    <Tab title="Dnf">
-    <Info>
-    This is an officially supported package, maintained by a member of the Sherlock Project itself.
-
-    Sherlock has out-of-the-box support for Fedora. Enterprise Linux support through EPEL is __planned__.
-    Enterprise Linux distributions are RHEL, CentOS, Alma, Rocky, Oracle, and Scientific.
-    </Info>
-
-    ```bash
-    sudo dnf install sherlock-project
-    ```
-
-    That's it! You can now run sherlock from anywhere.
-
-    ```bash
-    sherlock --version
-    ```
-  </Tab>
-
-  <Tab title="BlackArch">
-    <Info>
-    This package is not officially supported, but still closely follows our release cycle.
-    </Info>
-    ```bash
-    sudo pacman -S sherlock
-    ```
-
-    That's it! You can now run sherlock from anywhere.
-
-    ```bash
-    sherlock --version
-    ```
-  </Tab>
-
-  <Tab title="Docker">
-    <Info>
-    This is an officially supported image, maintained by a member of the Sherlock Project itself.
-    </Info>
-
-    ```bash
-    docker pull sherlock/sherlock
-    ```
-<Note>Sherlock doesn't yet have context detection. It's recommended that Docker containers be ran with option `-o /opt/sherlock/results/{user123}.txt` (replace `{user123}`) when an output file is desired at the mounted volume (as seen in the compose). This has no effect on stdout, which functions as expected out of the box.</Note>
+[pipx](https://pipx.pypa. io/) is recommended over pip for more predictable behavior: 
 
 ```bash
-# One-off searches
-docker run --rm -t sherlock/sherlock user123
-
-# If you need to save the output file... (modify as needed)
-# Output file will land in ${pwd}/results
-docker run --rm -t -v "$PWD/results:/opt/sherlock/results" sherlock/sherlock -o /opt/sherlock/results/text.txt user123
+pipx install sherlock-project
 ```
 
+<details>
+<summary>💡 Prefer classic pip? </summary>
+
+Userspace installation is recommended: 
+
 ```bash
-# At any time, you may update the image via this command
+pip install --user sherlock-project
+```
+
+</details>
+
+**Verify installation:**
+
+```bash
+sherlock --version
+```
+
+---
+
+## 🍺 Homebrew
+
+> ⚠️ **Community maintained** — not officially supported, but trusted. 
+
+```bash
+brew install sherlock
+```
+
+**Verify installation:**
+
+```bash
+sherlock --version
+```
+
+---
+
+## 🐧 Apt (Kali / ParrotOS)
+
+> ⚠️ **Community maintained** — under the Debian Security Tools Packaging Team.   
+> Official support may come in the future. 
+
+Supported distributions:  **Kali** and **ParrotOS**  
+*(Debian, Ubuntu support is in progress)*
+
+```bash
+sudo apt install sherlock
+```
+
+**Verify installation:**
+
+```bash
+sherlock --version
+```
+
+---
+
+## 🎩 Dnf (Fedora)
+
+> ✅ **Officially supported** — maintained by the Sherlock Project team. 
+
+Out-of-the-box support for **Fedora**.   
+EPEL support for Enterprise Linux (RHEL, CentOS, Alma, Rocky, Oracle, Scientific) is **planned**.
+
+```bash
+sudo dnf install sherlock-project
+```
+
+**Verify installation:**
+
+```bash
+sherlock --version
+```
+
+---
+
+## 🏴 BlackArch
+
+> ⚠️ **Community maintained** — closely follows our release cycle.
+
+```bash
+sudo pacman -S sherlock
+```
+
+**Verify installation:**
+
+```bash
+sherlock --version
+```
+
+---
+
+## 🐳 Docker
+
+> ✅ **Officially supported** — maintained by the Sherlock Project team.
+
+### Pull the image
+
+```bash
 docker pull sherlock/sherlock
 ```
 
-### Using compose
+### Basic usage
 
-```yml
+```bash
+# One-off search
+docker run --rm -t sherlock/sherlock user123
+```
+
+### Save output to file
+
+> 💡 **Tip:** Sherlock doesn't have context detection yet. Use `-o` flag for output files with mounted volumes.
+
+```bash
+# Output file will land in ${pwd}/results
+docker run --rm -t -v "$PWD/results:/opt/sherlock/results" sherlock/sherlock -o /opt/sherlock/results/output.txt user123
+```
+
+### Update the image
+
+```bash
+docker pull sherlock/sherlock
+```
+
+### Using Docker Compose
+
+```yaml
 version: "3"
-services:
-  sherlock:
+services: 
+  sherlock: 
     container_name: sherlock
     image: sherlock/sherlock
-    volumes:
+    volumes: 
       - ./sherlock/:/opt/sherlock/results/
 ```
 
@@ -138,42 +164,60 @@ services:
 docker compose run sherlock user123
 ```
 
-### Build image from source (useful for contributors)
+### Build from source (contributors)
 
 ```bash
-# Assumes ${pwd} is repository root
-docker build -t sherlock .
+# Run from repository root
+docker build -t sherlock . 
 docker run --rm -t sherlock user123
 ```
-  </Tab>
-  <Tab title="GitHub">
-    <Info>
-    While this method uses the official repository, it's not an officially supported installation method. This method is recommended for contributors, packagers, and other users who need access to the source code.
-    </Info>
-    ```bash
-    git clone https://github.com/sherlock-project/sherlock.git
-    cd sherlock
-    virtualenv .
-    source bin/activate
-    ```
 
-    ## Build live package from source (useful for contributors)
+---
 
-    Building an editable (or live) package links the entry point to your current directory, rather than to the standard install location. This is often useful when working with the code base, as changes are reflected immediately without reinstallation.
+## 🛠️ GitHub (Source)
 
-    Note that the version number will be 0.0.0 for pipx local builds unless manually changed in the pyproject file (it will prompt the user for an update).
+> ⚠️ **Not officially supported** — recommended for contributors, packagers, or those who need source access.
 
-    ```bash
-    pipx install -e .
-    ```
+### Clone and setup
 
-    ## Run package from source (without installing)
+```bash
+git clone https://github.com/sherlock-project/sherlock. git
+cd sherlock
+virtualenv . 
+source bin/activate
+```
 
-    If you'd rather not install directly to your system, you can import the module at runtime with -m.
+### Build live/editable package (contributors)
 
-    ```bash
-    python3 -m sherlock_project user123 user789
-    ```
+Building an editable package links the entry point to your current directory — changes reflect immediately without reinstallation.
 
-  </Tab>
-</Tabs>
+> 💡 Version will show `0.0.0` for local pipx builds unless manually changed in `pyproject.toml`.
+
+```bash
+pipx install -e .
+```
+
+### Run without installing
+
+Import the module directly at runtime:
+
+```bash
+python3 -m sherlock_project user123 user789
+```
+
+---
+
+## ✅ Quick Verify
+
+After any installation method:
+
+```bash
+sherlock --version
+```
+
+---
+
+<p align="center">
+  <b>Happy Hunting!  🔍</b><br>
+  <a href="https://github.com/sherlock-project/sherlock">⭐ Star on GitHub</a>
+</p>
