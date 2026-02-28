@@ -1,0 +1,46 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Sherlock Project",
+  "colors": {
+    "primary": "#9563FF",
+    "light": "#6366f1",
+    "dark": "#0D001D"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get started",
+        "pages": [
+          "installation",
+          "usage",
+          "sites"
+        ]
+      },
+      {
+        "group": "Contributing",
+        "pages": [
+          "contribute",
+          "adding-sites"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/sherlock-project/sherlock"
+    }
+  },
+  "seo": {
+    "metatags": {
+      "og:title": "Sherlock Project",
+      "og:description": "Hunt down social media accounts by username across 400+ social networks",
+      "og:type": "website",
+      "og:locale": "en",
+      "og:site_name": "Sherlock Project"
+    },
+    "indexing": "navigable"
+  }
+}
